@@ -10,7 +10,7 @@
            <section class="d-flex align-items-baseline justify-content-between">
              <section class="d-flex">
                  <section class=" h3 mr-3">{{ $user->username }}</section>
-                  <follow-button></follow-button>
+                  <follow-button user-id="{{$user->id}}"></follow-button>
 
              </section>
                @can('update', $user->profile)
