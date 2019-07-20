@@ -7,8 +7,9 @@
            Image Logo
        </section>
        <section class="col-9">
-           <section>
-               <h1>{{ $user->username }}</h1>
+           <section class="d-flex align-items-baseline justify-content-between">
+               <h1>InstaClone</h1>
+
            </section>
            <section class="d-flex p-3">
                <section class="pr-5"><strong>153</strong> posts</section>
@@ -16,28 +17,24 @@
                <section class="pr-5"><strong>212</strong> following</section>
            </section>
            <section>
-               <strong>{{ $user->profile->title }}</strong>
+               <strong>InstaClone</strong>
            </section>
            <section>
-               {{ $user->profile->desciption}}
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur ipsam eaque, sequi dolorem quisquam laboriosam ex, quam perferendis ullam ratione possimus, blanditiis rerum esse. Numquam, placeat praesentium dolorum atque animi obcaecati iusto beatae eius, consequuntur totam quis nesciunt itaque! Ut?
            </section>
-           <section>
+           <a>
 
-               <a href="">{{$user->profile->url ?? 'N/A'}}</a>
+               <a href="">InstaClone</a>
            </section>
        </section>
    </section>
 
    <section class="row pt-4">
+
        <section class="col-4">
-           <img src="" alt=""  class="w-100">
+
        </section>
-       <section class="col-4">
-           <img src="" alt="" class="w-100">
-       </section>
-       <section class="col-4">
-           <img src="" alt="" class="w-100">
-       </section>
+
    </section>
 </div>
 @endsection
