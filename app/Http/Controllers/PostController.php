@@ -10,7 +10,15 @@ class PostController extends Controller
 {
     public function __contstruct()
     {
-      $this->middleware('auth');
+        $this->middleware('auth');
+    }
+
+    public function index()
+    {
+        $users = auth()->user()->following()->pluck('profiles.user_id');
+        $posts = Post::whereIn('user_id', $users)->with('user')->latest()->get();
+
+        return view('posts.index', compact('posts'));
     }
     public function create()
     {
@@ -23,9 +31,9 @@ class PostController extends Controller
             'caption' => 'required',
             'image' => ['required', 'image'],
         ]);
-        $imagePath = request('image')->store('uploads','public');
-           $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200,1200);
-          $image->save();
+        $imagePath = request('image')->store('uploads', 'public');
+        $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200, 1200);
+        $image->save();
         auth()->user()->posts()->create([
           'caption'=>$data['caption'],
           'image'=>$imagePath,
@@ -36,7 +44,6 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
-
-      return view('posts.show',compact('post'));
+        return view('posts.show', compact('post'));
     }
 }
