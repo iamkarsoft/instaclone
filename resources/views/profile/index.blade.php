@@ -19,8 +19,8 @@
            </section>
            <section class="d-flex p-3">
            <section class="pr-5"><strong>{{$user->posts->count()}}</strong> posts</section>
-               <section class="pr-5"><strong>255k</strong> followers</section>
-               <section class="pr-5"><strong>212</strong> following</section>
+               <section class="pr-5"><strong>{{$user->profile->followers->count()}}</strong> followers</section>
+               <section class="pr-5"><strong>{{$user->following->count()}}</strong> following</section>
            </section>
            <section>
                <strong>{{ $user->profile->title }}</strong>

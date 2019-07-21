@@ -21,7 +21,7 @@
           followUser(){
             axios.post('/follow/' + this.userId)
               .then(response=>{
-                this.status = !this.status;
+                this.status = ! this.status;
                 console.log(response.data);
               })
               .catch(errors =>{
@@ -33,7 +33,7 @@
         },
         computed: {
           buttonText(){
-            return(this.status) ? 'Unfollow' : 'Follow';
+            return (this.status) ? 'Unfollow' : 'Follow';
           }
         }
     }
